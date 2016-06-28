@@ -3,5 +3,8 @@
 
     <string name="app_name">SimpleTweets</string>
     <string name="login_label">Connect to Twitter</string>
+    <string name="name">\@name</string>
+    <string name="names">\@name</string>
+    <string name="time">Time</string>
 
 </resources>

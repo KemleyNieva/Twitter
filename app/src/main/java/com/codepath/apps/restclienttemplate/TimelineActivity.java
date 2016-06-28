@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
 import com.astuetz.PagerSlidingTabStrip;
@@ -26,14 +27,15 @@ import java.util.ArrayList;
 
 import cz.msebera.android.httpclient.Header;
 
-public class TimelineActivity extends AppCompatActivity {
 
+public class TimelineActivity extends AppCompatActivity {
+    ViewPager vpPager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
 
-        ViewPager vpPager = (ViewPager) findViewById(R.id.viewpager);
+        vpPager = (ViewPager) findViewById(R.id.viewpager);
 
         vpPager.setAdapter(new TweetsPagerAdapter(getSupportFragmentManager()));
 
@@ -61,6 +63,20 @@ public class TimelineActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void onComposeTweet(MenuItem item) {
+        Intent i = new Intent(this, ComposeActivity.class);
+        startActivityForResult(i,0);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode ==0 ) {
+            Log.d("loading", "yes");
+            //get the tweet out of data intent
+            //add it to tweetsarrayadapter
+            //notify the adapter that data has changed
+        }
+    }
 
     public class TweetsPagerAdapter extends FragmentPagerAdapter{
 
