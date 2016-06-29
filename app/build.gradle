@@ -21,6 +21,8 @@ android {
 repositories {
     jcenter()
     maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+    mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
@@ -37,5 +39,7 @@ dependencies {
     compile 'com.michaelpardo:activeandroid:3.1.0-SNAPSHOT'
     //For sliding tab
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    compile 'com.github.markushi:circlebutton:1.1'
+
 
 }

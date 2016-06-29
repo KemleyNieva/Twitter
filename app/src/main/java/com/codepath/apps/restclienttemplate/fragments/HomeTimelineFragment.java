@@ -12,6 +12,8 @@ import com.loopj.android.http.JsonHttpResponseHandler;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+
 import cz.msebera.android.httpclient.Header;
 
 /**
@@ -46,4 +48,7 @@ public class HomeTimelineFragment extends TweetsListFragments {
             }
         });
     }
+
+
+
 }

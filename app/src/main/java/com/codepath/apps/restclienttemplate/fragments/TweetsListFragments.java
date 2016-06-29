@@ -20,13 +20,9 @@ import java.util.List;
  */
 public class TweetsListFragments extends Fragment{
 
-    private ArrayList<Tweet> tweets;
+     ArrayList<Tweet> tweets;
     private TweetsArrayAdapter aTweets;
     private ListView lvTweets;
-
-
-
-
 
 
     @Nullable
@@ -47,5 +43,11 @@ public class TweetsListFragments extends Fragment{
 
     public void addAll(List<Tweet> tweets){
         aTweets.addAll(tweets);
+    }
+
+    public void appendTweet(Tweet tweet){
+        tweets.add(0,tweet);
+        aTweets.notifyDataSetChanged();
+        lvTweets.setSelection(0);
     }
 }

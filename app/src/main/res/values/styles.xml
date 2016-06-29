@@ -8,9 +8,20 @@
         -->
     </style>
 
+    //cop and paste
+
+
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+       <item name="android:background">@android:color/white</item>
+        <item name="titleTextStyle">@style/MyActionBar.TitleTextStyle</item>
     </style>
 
-</resources>
+    <style name="MyActionBar.TitleTextStyle"
+    parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+    <item name="android:textColor">@android:color/black</item>
+    </style>
+
+
+    </resources>

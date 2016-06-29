@@ -4,12 +4,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by kemleynieva on 6/27/16.
  */
-public class Tweet {
+public class Tweet implements Serializable {
+
+
+
 
     public String getBody() {
         return body;
@@ -47,6 +51,8 @@ public class Tweet {
 
         return tweet;
     }
+
+
 
     public  static ArrayList<Tweet> fromJSONArray(JSONArray jsonArray){
       ArrayList<Tweet> tweets = new ArrayList<>();
