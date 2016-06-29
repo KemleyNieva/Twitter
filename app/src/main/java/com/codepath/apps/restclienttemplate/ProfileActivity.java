@@ -31,28 +31,32 @@ public class ProfileActivity extends AppCompatActivity {
         //getSupportActionBar().setTitle("Kemley");
         client = TwitterApplication.getRestClient();
 
-        client.getUserInfo(new JsonHttpResponseHandler(){
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                user = User.fromJSON(response);
-                getSupportActionBar().setTitle("@" + user.getScreenName());
-                Log.d("ProfileActivity", "Worked");
+        user = (User) getIntent().getSerializableExtra("user");
 
-                //getSupportActionBar().setTitle("Kemley");
-                populateProfileHeader(user);
+        if(user == null) {
 
-            }
+            client.getUserInfo(new JsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    user = User.fromJSON(response);
+                    Log.d("ProfileActivity", "Worked");
+                    Log.d("user_id", String.valueOf(user.getUid()));
 
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                Log.d("ProfileActivity", "Failed");
-            }
-        });
+                }
 
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                    Log.d("ProfileActivity", "Failed");
+                }
+            });
 
+        }
+        getSupportActionBar().setTitle("@" + user.getScreenName());
 
+        //getSupportActionBar().setTitle("Kemley");
+        populateProfileHeader(user);
+        String screenName = user.getScreenName();
 
-        String screenName = getIntent().getStringExtra("screen_name");
         if(savedInstanceState == null) {
 
             UserTimelineFragment fragmentUserTimeline = UserTimelineFragment.newInstance(screenName);

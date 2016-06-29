@@ -57,7 +57,7 @@ public class ComposeActivity extends AppCompatActivity implements Serializable {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 final Intent data = new Intent();
-                Log.d("Compose", "Workedddd");
+                //Log.d("Compose", "Workedddd");
                 Tweet newTweet = Tweet.fromJSON(response);
                 data.putExtra("newTweet", (Serializable) newTweet);
                 setResult(0, data);

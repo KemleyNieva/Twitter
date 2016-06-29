@@ -50,7 +50,8 @@
         <activity android:name=".TimelineActivity"
             android:theme="@style/AppTheme"/>
         <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".ComposeActivity"></activity>
+        <activity android:name=".ComposeActivity"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert"></activity>
         <activity android:name=".UsersProfileActivity"></activity>
     </application>
 

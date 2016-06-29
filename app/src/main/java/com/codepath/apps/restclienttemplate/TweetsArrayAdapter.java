@@ -1,6 +1,7 @@
 package com.codepath.apps.restclienttemplate;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -33,7 +34,7 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet>{
 //ViewHolder pattern
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Tweet tweet = getItem(position);
+        final Tweet tweet = getItem(position);
 
         if(convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_tweet,parent,false);
@@ -53,6 +54,16 @@ public class TweetsArrayAdapter extends ArrayAdapter<Tweet>{
         ivProfileImage.setImageResource(android.R.color.transparent);
         Picasso.with(getContext()).load(tweet.getUser().getProfileImportUrl()).fit().into(ivProfileImage);
 
+
+        ivProfileImage.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getContext(), ProfileActivity.class);
+                i.putExtra("user", tweet.getUser());
+                i.putExtra("u_id", tweet.getUser().getUid());
+                getContext().startActivity(i);
+            }
+        });
         return convertView;
 
     }
