@@ -22,6 +22,8 @@ import cz.msebera.android.httpclient.Header;
 public class ProfileActivity extends AppCompatActivity {
     TwitterClient client;
     User user;
+    String screenName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,7 @@ public class ProfileActivity extends AppCompatActivity {
         //getSupportActionBar().setTitle("Kemley");
         client = TwitterApplication.getRestClient();
 
+
         user = (User) getIntent().getSerializableExtra("user");
 
         if(user == null) {
@@ -39,8 +42,9 @@ public class ProfileActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                     user = User.fromJSON(response);
-                    Log.d("ProfileActivity", "Worked");
-                    Log.d("user_id", String.valueOf(user.getUid()));
+                    getSupportActionBar().setTitle("@" + user.getScreenName());
+                    populateProfileHeader(user);
+                    screenName= getIntent().getStringExtra("screen_name");
 
                 }
 
@@ -51,11 +55,13 @@ public class ProfileActivity extends AppCompatActivity {
             });
 
         }
-        getSupportActionBar().setTitle("@" + user.getScreenName());
+        else {
+            getSupportActionBar().setTitle("@" + user.getScreenName());
+            populateProfileHeader(user);
+            screenName = user.getScreenName();
+        }
 
-        //getSupportActionBar().setTitle("Kemley");
-        populateProfileHeader(user);
-        String screenName = user.getScreenName();
+
 
         if(savedInstanceState == null) {
 

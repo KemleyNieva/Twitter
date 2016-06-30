@@ -84,7 +84,7 @@ public class TimelineActivity extends AppCompatActivity {
     }
 
     public void onProfile(View view) {
-        Intent i = new Intent(this, UsersProfileActivity.class);
+        Intent i = new Intent(this, ProfileActivity.class);
         //i.putExtra("user_id", )
         startActivity(i);
     }

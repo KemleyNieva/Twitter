@@ -7,11 +7,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etTweet"
+        android:layout_marginTop="87dp"
+        android:hint="What&apos;s happening?"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="134dp"
-        android:hint="What&apos;s happening?" />
+        android:layout_above="@+id/btPostTweet"
+        android:gravity="top" />
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/ivProfile"
+        android:src="@android:drawable/screen_background_light_transparent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -19,8 +30,27 @@
         android:text="Tweet"
         android:id="@+id/btPostTweet"
         android:onClick="Tweet"
-        android:layout_below="@+id/etTweet"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/ivProfile"
+        android:layout_alignEnd="@+id/ivProfile" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvCount"
+        android:layout_alignBaseline="@+id/btPostTweet"
+        android:layout_alignBottom="@+id/btPostTweet"
+        android:layout_toLeftOf="@+id/btPostTweet"
+        android:layout_toStartOf="@+id/btPostTweet" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/imageView"
+        android:src="@mipmap/ic_close"
+        android:onClick="onExitCompose"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
