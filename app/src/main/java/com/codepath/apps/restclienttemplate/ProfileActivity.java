@@ -80,6 +80,7 @@ public class ProfileActivity extends AppCompatActivity {
         TextView tvFollowing = (TextView) findViewById(R.id.tvFollowing);
         TextView tvUsername = (TextView) findViewById(R.id.tvAtname);
         ImageView ivProfileImage = (ImageView) findViewById(R.id.ivProfileImage);
+        ImageView ivBackgroundImage = (ImageView) findViewById(R.id.ivProfileBackground);
         tvName.setText(user.getName());
         tvTagLine.setText(user.getTagline());
         Log.d("ProfileActivity", user.getScreenName());
@@ -87,6 +88,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvFollowers.setText(user.getFollowersCount() + " Following");
         tvFollowing.setText(user.getFollowingsCount() + " Followers");
         Picasso.with(this).load(user.getProfileImportUrl()).into(ivProfileImage);
+        Picasso.with(this).load(user.getProfilebackgroundImportUrl()).fit().into(ivBackgroundImage);
 
     }
 

@@ -25,6 +25,10 @@ public class User implements Serializable {
         return profileImportUrl;
     }
 
+    public String getProfilebackgroundImportUrl() {
+        return profilebackgroundImportUrl;
+    }
+
     private String name;
     private long uid;
     private  String screenName;
@@ -45,6 +49,7 @@ public class User implements Serializable {
     private  String tagline;
     private int followersCount;
     private  int followingsCount;
+    private String profilebackgroundImportUrl;
 
 
     public static User fromJSON(JSONObject json){
@@ -54,6 +59,7 @@ public class User implements Serializable {
             u.uid = json.getLong("id");
             u.screenName = json.getString("screen_name");
             u.profileImportUrl= json.getString("profile_image_url");
+            u.profilebackgroundImportUrl = json.getString("profile_background_image_url");
             u.tagline = json.getString("description");
             u.followersCount =json.getInt("followers_count");
             u.followingsCount = json.getInt("friends_count");
@@ -62,5 +68,6 @@ public class User implements Serializable {
         }
         return u;
     }
+
 
 }

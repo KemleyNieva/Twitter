@@ -17,6 +17,7 @@
         android:layout_below="@+id/ivProfile"
         android:paddingTop="20dp" />
 
+
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
@@ -46,11 +47,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvCount"
+        android:hint="140"
         android:layout_alignBaseline="@+id/btPostTweet"
         android:layout_alignBottom="@+id/btPostTweet"
         android:layout_toLeftOf="@+id/btPostTweet"
         android:layout_toStartOf="@+id/btPostTweet"
-        android:layout_marginRight="5dp" />
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp" />
 
     <ImageView
         android:layout_width="20dp"
@@ -61,5 +64,50 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:id="@+id/ivLocation"
+        android:src="@mipmap/location"
+        android:layout_below="@+id/etTweet"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:id="@+id/ivCamera"
+        android:src="@mipmap/ic_camera"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/etTweet"
+        android:layout_toRightOf="@+id/ivLocation"
+        android:layout_toEndOf="@+id/ivLocation" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:id="@+id/ivGif"
+        android:src="@mipmap/ic_gid"
+        android:layout_marginLeft="17dp"
+        android:layout_alignTop="@+id/ivCamera"
+        android:layout_toRightOf="@+id/ivCamera"
+        android:layout_toEndOf="@+id/ivCamera"
+        android:layout_marginStart="17dp" />
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:id="@+id/ivInfo"
+        android:src="@mipmap/ic_info"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/etTweet"
+        android:layout_toLeftOf="@+id/tvCount"
+        android:layout_toStartOf="@+id/tvCount"
+        android:layout_marginRight="13dp"
+        android:layout_marginEnd="13dp" />
+
+
 
 </RelativeLayout>

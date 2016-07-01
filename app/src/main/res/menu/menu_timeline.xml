@@ -6,7 +6,7 @@
     <item
         android:id="@+id/miProfile"
         app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_profile"
+        android:icon="@drawable/ic_tweetprofile"
         android:title="Profile"
         android:onClick="onProfileView"
         ></item>
@@ -17,6 +17,13 @@
         android:orderInCategory="100"
         app:showAsAction="always"
         app:actionLayout="@layout/action_view_progress" />
+    <item
+        android:id="@+id/miSearch"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_search"
+        android:title="Profile"
+        ></item>
+
 
 
 </menu>
