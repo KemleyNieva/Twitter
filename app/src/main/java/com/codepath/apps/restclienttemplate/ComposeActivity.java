@@ -3,6 +3,7 @@ package com.codepath.apps.restclienttemplate;
 import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
@@ -52,6 +53,7 @@ public class ComposeActivity extends AppCompatActivity implements Serializable {
                 user = User.fromJSON(response);
                 ImageView ivProfileImage = (ImageView) findViewById(R.id.ivProfile);
                 Picasso.with(ComposeActivity.this).load(user.getProfileImportUrl()).into(ivProfileImage);
+
             }
 
             @Override
@@ -115,10 +117,8 @@ public class ComposeActivity extends AppCompatActivity implements Serializable {
 
 
     public void onExitCompose(View view) {
-        final Intent data = new Intent();
-        Tweet newTweet = null;
-        data.putExtra("newTweet", (Serializable) newTweet);
-        setResult(0, data);
+        Intent data = new Intent();
+        setResult(1, data);
         finish();
     }
 }

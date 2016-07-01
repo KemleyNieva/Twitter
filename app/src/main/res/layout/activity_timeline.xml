@@ -23,9 +23,9 @@
     <at.markushi.ui.CircleButton
         android:layout_width="68dip"
         android:layout_height="68dip"
-        android:src="@mipmap/ic_composetweet"
-        app:cb_color="@android:color/white"
-        app:cb_pressedRingWidth="4dip"
+        android:src="@drawable/ic_action_name"
+        app:cb_color="@color/twitterBlue"
+        app:cb_pressedRingWidth="8dip"
         android:layout_marginBottom="35dp"
         android:onClick="onComposeTweet"
         android:layout_alignParentBottom="true"

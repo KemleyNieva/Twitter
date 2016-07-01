@@ -7,19 +7,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etTweet"
-        android:layout_marginTop="87dp"
         android:hint="What&apos;s happening?"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_above="@+id/btPostTweet"
-        android:gravity="top" />
+        android:gravity="top"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
+        android:layout_below="@+id/ivProfile"
+        android:paddingTop="20dp" />
 
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:id="@+id/ivProfile"
         android:src="@android:drawable/screen_background_light_transparent"
+        android:paddingTop="10dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -30,9 +33,14 @@
         android:text="Tweet"
         android:id="@+id/btPostTweet"
         android:onClick="Tweet"
+        android:background="#55acee"
+        android:textColor="#ffffff"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/ivProfile"
-        android:layout_alignEnd="@+id/ivProfile" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -41,13 +49,14 @@
         android:layout_alignBaseline="@+id/btPostTweet"
         android:layout_alignBottom="@+id/btPostTweet"
         android:layout_toLeftOf="@+id/btPostTweet"
-        android:layout_toStartOf="@+id/btPostTweet" />
+        android:layout_toStartOf="@+id/btPostTweet"
+        android:layout_marginRight="5dp" />
 
     <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:id="@+id/imageView"
-        android:src="@mipmap/ic_close"
+        android:src="@mipmap/ic_twitterexit"
         android:onClick="onExitCompose"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

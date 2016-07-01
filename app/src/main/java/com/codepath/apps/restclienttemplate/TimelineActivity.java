@@ -6,7 +6,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,6 +18,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.codepath.apps.restclienttemplate.fragments.HomeTimelineFragment;
@@ -23,12 +26,19 @@ import com.codepath.apps.restclienttemplate.fragments.MentionsTimelineFragment;
 import com.codepath.apps.restclienttemplate.fragments.TweetsListFragments;
 import com.codepath.apps.restclienttemplate.fragments.UserTimelineFragment;
 import com.codepath.apps.restclienttemplate.models.Tweet;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.json.JSONArray;
 
 
 public class TimelineActivity extends AppCompatActivity {
     private SmartFragmentStatePagerAdapter adapterViewPager;
     static Tweet t;
+    TwitterClient client;
+    MenuItem miActionProgressItem;
     ViewPager vpPager;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +52,8 @@ public class TimelineActivity extends AppCompatActivity {
         PagerSlidingTabStrip tabStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
 
         tabStrip.setViewPager(vpPager);
+
+
 
     }
 
@@ -80,6 +92,9 @@ public class TimelineActivity extends AppCompatActivity {
             //get the tweet out of data intent
             //add it to tweetsarrayadapter
             //notify the adapter that data has changed
+        }
+        if(requestCode ==1 ){
+
         }
     }
 
@@ -154,6 +169,9 @@ public class TimelineActivity extends AppCompatActivity {
         }
 
     }
+
+
+
 
 
 
